@@ -1,0 +1,17 @@
+<svg width="900" height="1350" viewBox="0 0 900 1350" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1350" fill="url(#bg)"/>
+  <circle cx="280" cy="230" r="150" fill="#BCE6FF" fill-opacity="0.25"/>
+  <circle cx="620" cy="430" r="170" fill="#5F8FFF" fill-opacity="0.22"/>
+  <path d="M180 1010L320 730L450 885L650 590L720 1010" stroke="#EAF8FF" stroke-opacity="0.82" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M450 760L450 525" stroke="#EAF8FF" stroke-opacity="0.8" stroke-width="18" stroke-linecap="round"/>
+  <path d="M360 560L450 500L540 560" stroke="#CBECFF" stroke-opacity="0.8" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="450" y="1115" text-anchor="middle" fill="#ECF7FF" font-family="Arial, sans-serif" font-size="42" letter-spacing="6">ACHIEVEMENT</text>
+  <defs>
+    <linearGradient id="bg" x1="900" y1="0" x2="0" y2="1350" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071720"/>
+      <stop offset="0.52" stop-color="#0D1B2B"/>
+      <stop offset="1" stop-color="#040B14"/>
+    </linearGradient>
+  </defs>
+</svg>
+

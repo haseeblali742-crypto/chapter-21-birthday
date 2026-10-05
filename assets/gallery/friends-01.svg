@@ -1,0 +1,18 @@
+<svg width="900" height="1200" viewBox="0 0 900 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1200" fill="url(#bg)"/>
+  <circle cx="180" cy="170" r="120" fill="#8BCBFF" fill-opacity="0.4"/>
+  <circle cx="635" cy="270" r="180" fill="#4E88FF" fill-opacity="0.28"/>
+  <path d="M150 900C250 700 350 620 450 620C550 620 650 700 750 900V1200H150V900Z" fill="#E7F0FF" fill-opacity="0.18"/>
+  <path d="M230 875L450 640L670 875" stroke="#EAF5FF" stroke-opacity="0.72" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M345 540L450 460L555 540" stroke="#C8EBFF" stroke-opacity="0.7" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M290 1020H610" stroke="#A5CBFF" stroke-opacity="0.8" stroke-width="12" stroke-linecap="round"/>
+  <text x="450" y="1045" text-anchor="middle" fill="#EAF5FF" font-family="Arial, sans-serif" font-size="52" letter-spacing="8">CHILDHOOD</text>
+  <defs>
+    <linearGradient id="bg" x1="900" y1="0" x2="0" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071421"/>
+      <stop offset="0.5" stop-color="#0D1E31"/>
+      <stop offset="1" stop-color="#050B15"/>
+    </linearGradient>
+  </defs>
+</svg>
+

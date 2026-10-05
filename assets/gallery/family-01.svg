@@ -1,0 +1,19 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <circle cx="180" cy="200" r="150" fill="#8CC8FF" fill-opacity="0.25"/>
+  <circle cx="630" cy="680" r="170" fill="#5A8BFF" fill-opacity="0.15"/>
+  <circle cx="270" cy="390" r="75" fill="#E8F3FF" fill-opacity="0.26"/>
+  <circle cx="430" cy="325" r="82" fill="#EAF6FF" fill-opacity="0.3"/>
+  <circle cx="590" cy="420" r="90" fill="#D3EAFF" fill-opacity="0.22"/>
+  <path d="M195 645C284 590 353 560 450 560C547 560 620 590 705 645" stroke="#E7F5FF" stroke-opacity="0.75" stroke-width="16" stroke-linecap="round"/>
+  <path d="M250 670L450 470L650 670" stroke="#C1E1FF" stroke-opacity="0.8" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="450" y="770" text-anchor="middle" fill="#EAF5FF" font-family="Arial, sans-serif" font-size="46" letter-spacing="8">FRIENDS</text>
+  <defs>
+    <linearGradient id="bg" x1="900" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#081823"/>
+      <stop offset="0.5" stop-color="#0E1A2A"/>
+      <stop offset="1" stop-color="#040B15"/>
+    </linearGradient>
+  </defs>
+</svg>
+

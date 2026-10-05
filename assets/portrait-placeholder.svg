@@ -1,0 +1,352 @@
+const lessons = [
+  'Keep going.',
+  'Trust the process.',
+  'Learn from mistakes.',
+  'Value your people.',
+  'Stay humble.',
+  'Dream bigger.',
+  'Protect your peace.',
+  'Be grateful.',
+  'Never stop learning.',
+  'Believe in yourself.',
+  'Create your own path.',
+  'Let growth be uncomfortable.',
+  'Choose joy on purpose.',
+  'Success is built slowly.',
+  'Your story is still unfolding.',
+  'Disciplines creates freedom.',
+  'Your peace is a priority.',
+  'Be patient with your becoming.',
+  'Grace is stronger than pressure.',
+  'Purpose grows through consistency.',
+  'This chapter is yours to shape.'
+];
+
+const wishes = [
+  'May this chapter bring you deeper purpose and quiet confidence.',
+  'May your dreams grow bold enough to match your potential.',
+  'May you keep the courage to become who you are meant to be.',
+  'May your heart stay full of peace, gratitude, and wonder.',
+  'May your relationships be rooted in love, respect, and loyalty.',
+  'May every challenge become a stronger version of you.',
+  'May you keep chasing what genuinely matters.',
+  'May your future be brighter than your past ever was.',
+  'May your confidence become as loud as your ambition.',
+  'May this year bring joy that feels deeply earned.',
+  'May you keep believing in your own magic.',
+  'May your path be clear, your mind be calm, and your spirit be free.',
+  'May you continue to grow without losing yourself.',
+  'May bright opportunities find you at the right time.',
+  'May your laughter remain easy and your dreams stay big.',
+  'May you be surrounded by people who lift you higher.',
+  'May success feel meaningful and peaceful.',
+  'May compassion and confidence walk together in your life.',
+  'May your next chapter be filled with unforgettable memories.',
+  'May your heart stay open to all the beautiful things ahead.',
+  'May Chapter 21 be your most intentional, fulfilling year yet.'
+];
+
+const galleryItems = [
+  { src: 'assets/gallery/childhood-01.svg', alt: 'Childhood memory placeholder', category: 'Childhood', title: 'A warm beginning', size: 'tall' },
+  { src: 'assets/gallery/friends-01.svg', alt: 'Friends memory placeholder', category: 'Friends', title: 'Golden moments', size: 'medium' },
+  { src: 'assets/gallery/family-01.svg', alt: 'Family memory placeholder', category: 'Family', title: 'Home in every way', size: 'wide' },
+  { src: 'assets/gallery/adventure-01.svg', alt: 'Adventure memory placeholder', category: 'Adventures', title: 'Chasing new roads', size: 'medium' },
+  { src: 'assets/gallery/achievement-01.svg', alt: 'Achievement memory placeholder', category: 'Achievements', title: 'Proof of the grind', size: 'tall' },
+  { src: 'assets/gallery/recent-01.svg', alt: 'Recent moment placeholder', category: 'Recent Moments', title: 'This season', size: 'wide' },
+  { src: 'assets/gallery/childhood-02.svg', alt: 'Childhood memory placeholder', category: 'Childhood', title: 'Small joys', size: 'medium' },
+  { src: 'assets/gallery/friends-02.svg', alt: 'Friends memory placeholder', category: 'Friends', title: 'Laughs that stayed', size: 'wide' },
+  { src: 'assets/gallery/family-02.svg', alt: 'Family memory placeholder', category: 'Family', title: 'The ones who kept me', size: 'medium' }
+];
+
+const galleryGrid = document.getElementById('galleryGrid');
+const lessonsGrid = document.getElementById('lessonsGrid');
+const wishesGrid = document.getElementById('wishesGrid');
+
+function renderGallery() {
+  galleryGrid.innerHTML = galleryItems
+    .map(
+      (item) => `
+        <figure class="gallery-item ${item.size}" data-category="${item.category}">
+          <img src="${item.src}" alt="${item.alt}" loading="lazy" />
+          <figcaption class="gallery-meta">
+            <div>
+              <span class="gallery-label">${item.category}</span>
+              <div class="gallery-title">${item.title}</div>
+            </div>
+          </figcaption>
+        </figure>
+      `
+    )
+    .join('');
+}
+
+function renderLessons() {
+  lessonsGrid.innerHTML = lessons
+    .map(
+      (lesson, index) => `
+        <article class="lesson-card reveal">
+          <span class="lesson-index">0${index + 1}</span>
+          <div class="lesson-text">${lesson}</div>
+        </article>
+      `
+    )
+    .join('');
+}
+
+function renderWishes() {
+  wishesGrid.innerHTML = wishes
+    .map(
+      (wish, index) => `
+        <article class="wish-card reveal" tabindex="0" aria-expanded="false">
+          <div>
+            <span class="wish-number">${String(index + 1).padStart(2, '0')}</span>
+            <p class="wish-text">${wish}</p>
+          </div>
+        </article>
+      `
+    )
+    .join('');
+}
+
+function initRevealAnimations() {
+  const revealItems = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.14, rootMargin: '0px 0px -40px 0px' }
+  );
+
+  revealItems.forEach((item) => observer.observe(item));
+}
+
+function initWishCards() {
+  const wishesCards = document.querySelectorAll('.wish-card');
+
+  wishesCards.forEach((card) => {
+    const toggle = () => {
+      const isOpen = card.classList.toggle('expanded');
+      card.setAttribute('aria-expanded', String(isOpen));
+    };
+
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        toggle();
+      }
+    });
+  });
+}
+
+function initMagneticButtons() {
+  document.querySelectorAll('.magnetic').forEach((button) => {
+    button.addEventListener('mousemove', (event) => {
+      const rect = button.getBoundingClientRect();
+      const x = event.clientX - rect.left - rect.width / 2;
+      const y = event.clientY - rect.top - rect.height / 2;
+      button.style.transform = `translate(${x * 0.08}px, ${y * 0.12}px)`;
+    });
+
+    button.addEventListener('mouseleave', () => {
+      button.style.transform = 'translate(0, 0)';
+    });
+  });
+}
+
+function initTiltCards() {
+  document.querySelectorAll('.lesson-card, .timeline-content').forEach((card) => {
+    card.addEventListener('mousemove', (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width;
+      const y = (event.clientY - rect.top) / rect.height;
+      const rotateY = (x - 0.5) * 9;
+      const rotateX = (0.5 - y) * 9;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-2px)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = '';
+    });
+  });
+}
+
+function initCursorGlow() {
+  const cursorGlow = document.querySelector('.cursor-glow');
+
+  if (window.matchMedia('(pointer: fine)').matches) {
+    window.addEventListener('pointermove', (event) => {
+      cursorGlow.style.opacity = '1';
+      cursorGlow.style.left = `${event.clientX}px`;
+      cursorGlow.style.top = `${event.clientY}px`;
+    });
+
+    window.addEventListener('pointerleave', () => {
+      cursorGlow.style.opacity = '0';
+    });
+  }
+}
+
+function initParticles() {
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth * devicePixelRatio;
+    canvas.height = window.innerHeight * devicePixelRatio;
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+    ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+  }
+
+  function createParticle() {
+    return {
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
+      r: Math.random() * 2.4 + 0.8,
+      alpha: Math.random() * 0.8 + 0.15,
+      dx: (Math.random() - 0.5) * 0.4,
+      dy: (Math.random() - 0.5) * 0.4,
+    };
+  }
+
+  function setupParticles() {
+    particles = Array.from({ length: 55 }, createParticle);
+  }
+
+  function animateParticles() {
+    ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+    particles.forEach((particle) => {
+      particle.x += particle.dx;
+      particle.y += particle.dy;
+
+      if (particle.x < 0 || particle.x > window.innerWidth) particle.dx *= -1;
+      if (particle.y < 0 || particle.y > window.innerHeight) particle.dy *= -1;
+
+      ctx.beginPath();
+      ctx.fillStyle = `rgba(180, 214, 255, ${particle.alpha})`;
+      ctx.arc(particle.x, particle.y, particle.r, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    requestAnimationFrame(animateParticles);
+  }
+
+  resizeCanvas();
+  setupParticles();
+  animateParticles();
+  window.addEventListener('resize', () => {
+    resizeCanvas();
+    setupParticles();
+  });
+}
+
+function initLoadingScreen() {
+  const loadingScreen = document.getElementById('loading-screen');
+
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.body.classList.add('loaded');
+    }, 1700);
+  });
+
+  if (document.readyState === 'complete') {
+    setTimeout(() => {
+      document.body.classList.add('loaded');
+    }, 1700);
+  }
+}
+
+let audioCtx = null;
+let audioGain = null;
+let audioInterval = null;
+
+function initMusic() {
+  const button = document.getElementById('musicToggle');
+  const notes = [261.63, 329.63, 392.0, 523.25, 392.0, 329.63, 293.66, 349.23];
+  let index = 0;
+
+  function ensureAudioContext() {
+    if (!audioCtx) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) return null;
+      audioCtx = new AudioContextClass();
+      audioGain = audioCtx.createGain();
+      audioGain.gain.value = 0.025;
+      audioGain.connect(audioCtx.destination);
+    }
+    return audioCtx;
+  }
+
+  function playTone(frequency) {
+    const ctx = ensureAudioContext();
+    if (!ctx || !audioGain) return;
+
+    const oscillator = ctx.createOscillator();
+    const gainNode = ctx.createGain();
+    oscillator.type = 'sine';
+    oscillator.frequency.value = frequency;
+    gainNode.gain.value = 0.0001;
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioGain);
+
+    const now = ctx.currentTime;
+    gainNode.gain.exponentialRampToValueAtTime(0.08, now + 0.03);
+    gainNode.gain.exponentialRampToValueAtTime(0.0001, now + 0.4);
+
+    oscillator.start(now);
+    oscillator.stop(now + 0.45);
+  }
+
+  function toggleMusic() {
+    const ctx = ensureAudioContext();
+    if (!ctx) return;
+
+    if (audioInterval) {
+      clearInterval(audioInterval);
+      audioInterval = null;
+      button.classList.remove('is-playing');
+      button.innerHTML = '<span>♪ MUSIC</span>';
+      return;
+    }
+
+    button.classList.add('is-playing');
+    button.innerHTML = '<span>♪ STOP</span>';
+    audioInterval = setInterval(() => {
+      playTone(notes[index % notes.length]);
+      index += 1;
+    }, 420);
+  }
+
+  button.addEventListener('click', () => {
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+    toggleMusic();
+  });
+}
+
+renderGallery();
+renderLessons();
+renderWishes();
+initRevealAnimations();
+initWishCards();
+initMagneticButtons();
+initTiltCards();
+initCursorGlow();
+initParticles();
+initLoadingScreen();
+initMusic();
+
+window.addEventListener('DOMContentLoaded', () => {
+  const loadingScreen = document.getElementById('loading-screen');
+  if (!loadingScreen) return;
+});

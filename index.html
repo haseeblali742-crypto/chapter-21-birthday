@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CHAPTER 21 — A New Chapter Begins. A cinematic birthday story for Haseeb Lali celebrating his 21st birthday on 5 October 2026."
+    />
+    <title>CHAPTER 21 | Haseeb Lali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="loading-screen" id="loading-screen" aria-live="polite">
+      <div class="loading-orbit"></div>
+      <div class="loading-date">05 / 10 / 2026</div>
+      <div class="loading-title">CHAPTER 21</div>
+    </div>
+
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand">CHAPTER 21</div>
+      <button class="music-toggle magnetic" id="musicToggle" type="button" aria-label="Toggle music">
+        <span>♪ MUSIC</span>
+      </button>
+    </header>
+
+    <main>
+      <section class="hero panel reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">A New Chapter Begins</p>
+          <h1>CHAPTER 21</h1>
+          <div class="hero-name-line">
+            <span class="hero-line"></span>
+            <h2>HASEEB LALI</h2>
+            <span class="hero-line"></span>
+          </div>
+          <p class="birthday-date">05 OCTOBER 2026</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary magnetic" href="#story">Begin the story</a>
+            <a class="btn btn-secondary magnetic" href="#memories">View memories</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="portrait-wrap">
+            <div class="portrait-glow"></div>
+            <img src="assets/portrait-placeholder.svg" alt="Portrait placeholder of Haseeb Lali" class="portrait" />
+          </div>
+        </div>
+
+        <div class="scroll-indicator">SCROLL TO BEGIN ↓</div>
+      </section>
+
+      <section class="intro panel reveal" id="story">
+        <p class="section-kicker">20 Chapters Complete...</p>
+        <h3>20 years of memories, lessons, adventures, mistakes, achievements, and endless blessings.</h3>
+        <div class="intro-highlight reveal">
+          <p>Now it's time for Chapter 21.</p>
+        </div>
+      </section>
+
+      <section class="timeline panel reveal">
+        <div class="section-heading">
+          <p class="section-kicker">MY JOURNEY</p>
+          <h2>Life, chapter by chapter.</h2>
+        </div>
+
+        <div class="timeline-list">
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span>Chapter 01 — Childhood</span>
+              <p>First memories, innocence and family.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span>Chapter 05 — Growing Up</span>
+              <p>School, friendships and new experiences.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span>Chapter 10 — Discovering Myself</span>
+              <p>Dreams, challenges and lessons.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span>Chapter 15 — Finding My Way</span>
+              <p>Goals, ambition and personal growth.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span>Chapter 20 — The Journey So Far</span>
+              <p>Memories, achievements, mistakes and countless lessons.</p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal highlight-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span>Chapter 21 — A New Beginning</span>
+              <p>The future is waiting.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="gallery panel reveal" id="memories">
+        <div class="section-heading split-heading">
+          <div>
+            <p class="section-kicker">MEMORIES</p>
+            <h2>Fragments of a beautiful journey.</h2>
+          </div>
+        </div>
+
+        <div class="gallery-categories reveal">
+          <span>Childhood</span>
+          <span>Friends</span>
+          <span>Family</span>
+          <span>Adventures</span>
+          <span>Achievements</span>
+          <span>Recent Moments</span>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </section>
+
+      <section class="lessons panel reveal">
+        <p class="section-kicker">21 THINGS LIFE TAUGHT ME</p>
+        <h2>21 Things Life Taught Me</h2>
+        <div class="lessons-grid" id="lessonsGrid"></div>
+      </section>
+
+      <section class="message panel reveal">
+        <div class="message-inner">
+          <p class="section-kicker">BIRTHDAY MESSAGE</p>
+          <h3>This isn't just another birthday.</h3>
+          <h3>It's the beginning of a new chapter.</h3>
+          <h3>Chapter 21.</h3>
+        </div>
+      </section>
+
+      <section class="wishes panel reveal">
+        <div class="section-heading">
+          <p class="section-kicker">21 WISHES</p>
+          <h2>21 Wishes For Chapter 21</h2>
+        </div>
+        <div class="wishes-grid" id="wishesGrid"></div>
+      </section>
+
+      <section class="future panel reveal">
+        <div class="future-glow"></div>
+        <p class="section-kicker">WHAT'S NEXT?</p>
+        <h2>More dreams.<br />More adventures.<br />More challenges.<br />More memories.<br />More growth.</h2>
+        <p class="future-line">The best chapters are still unwritten.</p>
+      </section>
+
+      <section class="finale panel reveal">
+        <div class="finale-portrait-wrap">
+          <div class="finale-ring"></div>
+          <img src="assets/portrait-placeholder.svg" alt="Best portrait of Haseeb Lali" class="finale-portrait" />
+        </div>
+
+        <div class="finale-copy">
+          <p class="section-kicker">HAPPY BIRTHDAY</p>
+          <h1>HASEEB LALI</h1>
+          <h2>CHAPTER 21 BEGINS.</h2>
+          <p class="finale-date">05 • 10 • 2026</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

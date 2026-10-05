@@ -1,0 +1,19 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <circle cx="200" cy="190" r="130" fill="#A7D6FF" fill-opacity="0.2"/>
+  <circle cx="920" cy="670" r="180" fill="#5484FF" fill-opacity="0.18"/>
+  <circle cx="320" cy="420" r="80" fill="#E7F7FF" fill-opacity="0.24"/>
+  <circle cx="600" cy="340" r="105" fill="#EAF9FF" fill-opacity="0.18"/>
+  <circle cx="860" cy="470" r="92" fill="#DBF3FF" fill-opacity="0.18"/>
+  <path d="M190 680C270 620 340 600 430 600C520 600 595 630 680 680L760 740H190V680Z" fill="#EAF6FF" fill-opacity="0.12"/>
+  <path d="M250 680C330 610 380 590 470 590C560 590 640 610 720 680" stroke="#F1FAFF" stroke-opacity="0.75" stroke-width="18" stroke-linecap="round"/>
+  <text x="600" y="790" text-anchor="middle" fill="#EAF9FF" font-family="Arial, sans-serif" font-size="52" letter-spacing="8">LAUGHTER</text>
+  <defs>
+    <linearGradient id="bg" x1="1200" y1="0" x2="0" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071822"/>
+      <stop offset="0.5" stop-color="#0B1B2A"/>
+      <stop offset="1" stop-color="#050D18"/>
+    </linearGradient>
+  </defs>
+</svg>
+
